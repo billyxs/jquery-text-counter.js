@@ -4,9 +4,19 @@
 
 	<style>
 	/** Style Textarea Limit **/
+
+	/** Default Limit Class **/
 	.textarea-limit-label {
 		font-size: 20px;
 		color: #6699bb;
+	}
+
+	/** Create your own custom class **/
+	.textarea-limit-custom {
+		font-size: 25px;
+		color: #550099;
+		display: inline-block;
+		margin-left: 15px;
 	}
 	</style>
 
@@ -18,13 +28,14 @@
 		<div>
 			<label>SMS Text</label>
 			<p>SMS messages are limited to 160 characters</p>
+			<p>By default, the text counter is inserted before the textarea</p>
 			<textarea class="text-counter-1 form-control"></textarea>
 		</div>
 
 		<br />
 
 		<div>
-			<label>Twitter Text</label>
+			<label>Twitter Text <span id="limitBox"></span></label>
 			<p>Twitter messages are limited to 140 characters</p>
 			<textarea class="text-counter-2 form-control"></textarea>
 		</div>
@@ -37,8 +48,15 @@
 		$('.text-counter-1').textcounter();
 
 		// Twitter Textarea Counter - custom 140 character limit
+		// Add a custom class
+		// Set container to #limitBox span
+		// Add Prefix and Suffix
 		$('.text-counter-2').textcounter({
-			limit: 140
+			limit: 140,
+			class: "textarea-limit-custom",
+			container: $('#limitBox'),
+			prefix: "(",
+			suffix: ")"
 		});
 	</script>
 </body>
