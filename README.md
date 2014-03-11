@@ -10,7 +10,7 @@ jQuery plugin to limit the amount of characters for a textarea
 
 #### Customized Counter
 > Twitter customized counter, with user defined class, container, prefix and suffix
-		$('.text-counter-2').textcounter({
+		$('.text-counter').textcounter({
 			limit: 140,
 			class: "textarea-limit-custom",
 			container: $('#limitBox'),
