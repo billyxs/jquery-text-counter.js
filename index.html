@@ -2,8 +2,9 @@
 <head>
 	<link href="css/bootstrap-3.1.0.min.css" rel="stylesheet" />
 	<style>
-	a {
+	.textarea-limit-label {
 		font-size: 20px;
+		color: #6699bb;
 	}
 	</style>
 </head>
@@ -11,13 +12,29 @@
 
 	<div class="container">
 		<h2>Text Counter</h2>
-		<textarea></textarea>
+		<div class="">
+			<label>SMS Text</label>
+			<p>SMS messages are limited to 160 characters</p>
+			<textarea class="text-counter-1 form-control" cols="30" rows="6"></textarea>
+		</div>
+		<br />
+		<div>
+			<label>Twitter Text</label>
+			<p>Twitter messages are limited to 140 characters</p>
+			<textarea class="text-counter-2 form-control" cols="30" rows="6"></textarea>
+		</div>
 
 	</div>
 	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="jquery-text-counter.js"></script>
 	<script>
+		// SMS Textarea Counter - default 160 character limit
+		$('.text-counter-1').textcounter();
 
+		// Twitter Textarea Counter - custom 140 character limit
+		$('.text-counter-2').textcounter({
+			limit: 140
+		});
 	</script>
 </body>
 </html>
