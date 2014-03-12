@@ -9,12 +9,9 @@
 
         $limitElem.addClass(opts.class);
 
-        console.log("container" , $limitElem);
-
         return this.each(function(){
             var $this = $(this);
 
-            console.log("list elem", $limitElem);
             if(opts.container === null)
                 $limitElem.insertBefore( $this );
 
@@ -24,7 +21,6 @@
         });
 
         function updateTextareaCount(){
-            console.log("limit elem", $limitElem);
 
             if( $(this).val().length>opts.limit )
                 $(this).val( $(this).val().substr(0, opts.limit) );
